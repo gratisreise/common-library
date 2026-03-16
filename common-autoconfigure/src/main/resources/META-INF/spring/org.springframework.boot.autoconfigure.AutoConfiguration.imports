@@ -1,0 +1,3 @@
+com.rebook.common.autoconfigure.discovery.DiscoveryClientAutoConfiguration
+com.rebook.common.autoconfigure.feign.FeignAutoConfiguration
+com.rebook.common.autoconfigure.jpa.JpaAuditingAutoConfiguration

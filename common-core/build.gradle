@@ -1,0 +1,19 @@
+dependencies {
+    // spring-web: ResponseEntity, HttpStatus, @RestControllerAdvice 등
+    compileOnly 'org.springframework:spring-web'
+
+    // spring-context: BindException (validation 연동)
+    compileOnly 'org.springframework:spring-context'
+
+    // spring-data-commons: Page 인터페이스
+    compileOnly 'org.springframework.data:spring-data-commons'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = 'common-core'
+        }
+    }
+}

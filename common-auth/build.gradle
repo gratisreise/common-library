@@ -1,0 +1,22 @@
+plugins {
+    id 'com.google.protobuf' version "${protobufPluginVersion}"
+}
+
+dependencies {
+    api "com.google.protobuf:protobuf-java:${protobufVersion}"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = 'common-auth'
+        }
+    }
+}

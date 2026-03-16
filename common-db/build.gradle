@@ -1,0 +1,12 @@
+dependencies {
+    compileOnly 'org.springframework.boot:spring-boot-starter-data-jpa'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = 'common-db'
+        }
+    }
+}
