@@ -35,7 +35,7 @@ public class HmacUtil {
             byte[] combined = Base64.getDecoder().decode(base64);
 
             if (combined.length < HMAC_LENGTH) {
-                throw new PassportException("Invalid passport length");
+                throw new PassportException("유효하지 않은 길이입니다.");
             }
 
             int dataLength = combined.length - HMAC_LENGTH;
@@ -48,12 +48,12 @@ public class HmacUtil {
             byte[] expected = compute(raw);
 
             if (!MessageDigest.isEqual(expected, hmac)) {
-                throw new PassportException("Invalid passport signature");
+                throw new PassportException("유효하지 않는 서명입니다.");
             }
 
             return raw;
         } catch (Exception e) {
-            throw new PassportException("Invalid passport format", e);
+            throw new PassportException("유효하지 않는 여권 입니다.", e);
         }
     }
 

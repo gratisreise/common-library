@@ -12,7 +12,7 @@ public class PassportDecoder {
 
     public Passport decode(String encoded) {
         if (encoded == null || encoded.isBlank()) {
-            throw new PassportException("Missing passport header");
+            throw new PassportException("passport가 존재하지 않습니다.");
         }
 
         byte[] raw = hmacUtil.verify(encoded);
@@ -20,7 +20,7 @@ public class PassportDecoder {
         try {
             return Passport.parseFrom(raw);
         } catch (Exception e) {
-            throw new PassportException("Failed to parse passport proto", e);
+            throw new PassportException("protobuf를 파싱했는데 실패했습니다.", e);
         }
     }
 }

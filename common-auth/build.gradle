@@ -4,6 +4,8 @@ plugins {
 
 dependencies {
     api "com.google.protobuf:protobuf-java:${protobufVersion}"
+    compileOnly 'org.springframework:spring-webmvc'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api'
 }
 
 protobuf {
@@ -17,6 +19,7 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             artifactId = 'common-auth'
+            version='1.0.1'
         }
     }
 }
