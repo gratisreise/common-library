@@ -1,3 +1,5 @@
+version = '1.0.1'
+
 dependencies {
     // spring-web: ResponseEntity, HttpStatus, @RestControllerAdvice 등
     compileOnly 'org.springframework:spring-web'

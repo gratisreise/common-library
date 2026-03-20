@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
   public ResponseEntity<ErrorResponse> handleMethodArgumentNotValidException(
       MethodArgumentNotValidException ex) {
     String message = getErrorMessage(ex);
-    String code = ErrorCode.VALIDATION_FAILED.getCode();
+    String code = CommonError.VALIDATION_FAILED.getCode();
     return ResponseEntity.status(ex.getStatusCode()).body(ErrorResponse.from(code, message));
   }
 
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
   public ResponseEntity<ErrorResponse> handleMethodArgumentTypeMismatchException(
       MethodArgumentTypeMismatchException ex) {
     String message = getErrorMessage(ex);
-    String code = ErrorCode.TYPE_MISMATCH.getCode();
+    String code = CommonError.TYPE_MISMATCH.getCode();
 
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ErrorResponse.from(code, message));
   }

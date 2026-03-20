@@ -1,6 +1,7 @@
 package com.rebook.common.core.response;
 
 
+import com.rebook.common.core.exception.CommonError;
 import com.rebook.common.core.exception.ErrorCode;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -25,7 +26,7 @@ public class ErrorResponse extends BaseResponse {
   }
 
   public static ErrorResponse unknown(Exception ex) {
-    ErrorCode code = ErrorCode.UNKNOWN_ERROR;
+    ErrorCode code = CommonError.UNKNOWN_ERROR;
     return new ErrorResponse(code.getCode(), ex.getMessage());
   }
 }
