@@ -2,6 +2,8 @@ plugins {
     id 'com.google.protobuf' version "${protobufPluginVersion}"
 }
 
+version = '1.0.2'
+
 dependencies {
     api "com.google.protobuf:protobuf-java:${protobufVersion}"
     compileOnly 'org.springframework:spring-webmvc'
@@ -19,7 +21,6 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             artifactId = 'common-auth'
-            version='1.0.1'
         }
     }
 }

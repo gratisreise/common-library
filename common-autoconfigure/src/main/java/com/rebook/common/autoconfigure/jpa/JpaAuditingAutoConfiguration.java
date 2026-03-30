@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @AutoConfiguration
 @ConditionalOnClass(EnableJpaAuditing.class)
-@EntityScan(basePackages = "com.rebook")
-@EnableJpaRepositories(basePackages = "com.rebook")
+@EntityScan(basePackages = "com.example")
+@EnableJpaRepositories(basePackages = "com.example")
 public class JpaAuditingAutoConfiguration {
 
     @Configuration

@@ -1,14 +1,12 @@
 package com.rebook.common.auth;
 
 import com.rebook.common.auth.PassportProto.Passport;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class PassportDecoder {
 
     private final HmacUtil hmacUtil;
-
-    public PassportDecoder(HmacUtil hmacUtil) {
-        this.hmacUtil = hmacUtil;
-    }
 
     public Passport decode(String encoded) {
         if (encoded == null || encoded.isBlank()) {

@@ -14,7 +14,7 @@ repositories {
 // Spring Boot와 Spring Cloud 버전 정의
 ext {
     springBootVersion = '3.5.10'
-    springCloudVersion = '2025.0.0'
+    springCloudVersion = '2025.1.0'
 }
 
 subprojects {
@@ -23,7 +23,6 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
 
     group = 'com.rebook'
-    version = '1.0.0'
 
     repositories {
         mavenCentral()
